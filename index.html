@@ -14,11 +14,24 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-        }
+            height: 120vh;
 
+        }
+        .loader {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #4CAF50;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
         .app-container {
-            width: 360px;
+            width: 800px;
             padding: 20px;
             background-color: #181818;
             border-radius: 10px;
@@ -92,6 +105,22 @@
 
         .prev { left: 10px; }
         .next { right: 10px; }
+        .platforms {
+            margin-top: 20px;
+        }
+        .platform-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .platform-button:hover {
+            background-color: #388E3C;
+        }
     </style>
 </head>
 <body>
@@ -112,7 +141,7 @@
             <span class="age">7+ tuổi</span>
         </div>
         
-        <button class="install-button" onclick="window.location.href='https://example.com/tai-game'">Tải Xuống</button>
+        <button class="install-button" onclick="window.location.href='nentang.html'">Tải Xuống</button>
         
         <div class="app-preview">
             <button class="nav-button prev" onclick="prevImage()">❮</button>
@@ -121,15 +150,34 @@
         </div>
         
         <div class="app-description">
-            <h2>Về trò chơi này</h2>
-            <p>Thợ Săn Huyền Thoại VN là trò chơi nối hấp dẫn hay offline với cốt truyện và lối chơi hấp dẫn.</p>
+        <h1>Thợ Săn Huyền Thoại</h1>
+        <p><span class="highlight">Thợ Săn Huyền Thoại</span> là một tựa game nhập vai hành động (RPG) 2D <span class="highlight">offline</span> dành cho <span class="highlight">PC và Android</span>. Bạn sẽ phiêu lưu trong thế giới giả tưởng, chiến đấu với quái vật và thu thập trang bị mạnh mẽ mà không cần kết nối mạng.</p>   
+        <h3>Thợ Săn Huyền Thoại - VN</h3>
+        <h2>🔥 Tính năng nổi bật 🔥</h2>
+        <ul style="text-align: left; font-size: 20px;">
+            <li>✅ <strong>Chơi hoàn toàn offline</strong> – Không cần internet.</li>
+            <li>✅ <strong>Chiến đấu thời gian thực</strong> với hệ thống kỹ năng đa dạng.</li>
+            <li>✅ <strong>Hệ thống nhân vật tùy chỉnh</strong> – Chọn lớp nhân vật, nâng cấp kỹ năng.</li>
+            <li>✅ <strong>Trang bị và vũ khí đa dạng</strong> – cường hóa, khảm ngọc để tối ưu sức mạnh.</li>
+            <li>✅ <strong>Thế giới mở rộng lớn</strong> – Khám phá nhiều khu vực, săn boss huyền thoại.</li>
+            <li>✅ <strong>Chế độ chơi đa dạng</strong>: Phiêu lưu cốt truyện, Sinh tồn, Thử thách.</li>
+        </ul>
+
+        <h2>📌 Nền tảng hỗ trợ 📌</h2>
+        <div class="platforms">
+            <a href="#" class="platform-button">Tải cho PC</a>
+            <a href="#" class="platform-button">Tải cho Android</a>
+            <a href="#" class="platform-button">Tải cho Ios ( tạm chưa có )</a>
+        </div>
+
+        <p>🔥 <strong>Hãy tải game ngay hôm nay và bắt đầu hành trình của bạn!</strong> 🔥</p>
         </div>
         
         <button class="action-button">Hành động</button>
         <button class="action-button">Nhập vai</button>
         <button class="action-button">Đơn giản</button>
         <button class="action-button">Hấp dẫn</button>
-        <h2>Hỗ trợ nền tảng Android - PC</h2>
+        
     </div>
 
     <script>
@@ -149,6 +197,7 @@
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             document.getElementById("preview-image").src = images[currentIndex];
         }
+         
     </script>
 </body>
 </html>

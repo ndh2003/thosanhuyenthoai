@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thợ Săn Huyền Thoại</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .app-container {
+            width: 360px;
+            padding: 20px;
+            background-color: #181818;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .app-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            margin-right: 15px;
+        }
+
+        .app-info {
+            text-align: left;
+        }
+
+        .app-title {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .app-developer, .app-purchase {
+            font-size: 14px;
+            color: gray;
+        }
+
+        .app-details {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        .install-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .app-preview {
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .app-preview-image {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="app-header">
+            <img src="https://images.spiderum.com/sp-images/f9aabbc0449311ec885eab61bad4d8bd.png" alt="Thợ Săn Huyền Thoại" class="app-icon">
+            <div class="app-info">
+                <h1 class="app-title">Thợ Săn Huyền Thoại</h1>
+                <p class="app-developer">NDH STUDIO VN</p>
+                <p class="app-purchase">Thông tin trò chơi</p>
+            </div>
+        </div>
+        
+        <div class="app-details">
+            <span class="rating">5 ⭐</span>
+            <span class="downloads">Hơn 50 triệu lượt tải</span>
+            <span class="size">45 MB</span>
+            <span class="age">7+ tuổi</span>
+        </div>
+        
+        <button class="install-button" onclick="window.location.href='https://example.com/tai-game'">Tải Xuống</button>
+        
+        <div class="app-preview">
+            <button class="nav-button prev" onclick="prevImage()">❮</button>
+            <img id="preview-image" src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/04/ngoc-rong-online-1024x536.jpg.webp" alt="Gameplay" class="app-preview-image">
+            <button class="nav-button next" onclick="nextImage()">❯</button>
+        </div>
+        
+        <div class="app-description">
+            <h2>Về trò chơi này</h2>
+            <p>Thợ Săn Huyền Thoại VN là trò chơi nối hấp dẫn hay offline với cốt truyện và lối chơi hấp dẫn.</p>
+        </div>
+        
+        <button class="action-button">Hành động</button>
+        <button class="action-button">Nhập vai</button>
+        <button class="action-button">Đơn giản</button>
+        <button class="action-button">Hấp dẫn</button>
+        <h2>Hỗ trợ nền tảng Android - PC</h2>
+    </div>
+
+    <script>
+        const images = [
+            "https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/04/ngoc-rong-online-1024x536.jpg.webp",
+            "https://img.thuthuatphanmem.vn/uploads/2018/09/28/hinh-anh-7-vien-ngoc-rong-dep-nhat_023309510.jpg",
+            "https://didongviet.vn/dchannel/wp-content/uploads/2022/11/chu-be-rong-online-didongviet-2.jpg"
+        ];
+        let currentIndex = 0;
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById("preview-image").src = images[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            document.getElementById("preview-image").src = images[currentIndex];
+        }
+    </script>
+</body>
+</html>

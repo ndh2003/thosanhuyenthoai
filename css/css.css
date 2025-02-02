@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #4CAF50;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.app-container {
+    width: 800px;
+    padding: 20px;
+    background-color: #181818;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+}
+
+.app-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    margin-right: 15px;
+}
+
+.app-info {
+    text-align: left;
+}
+
+.app-title {
+    font-size: 20px;
+    margin: 0;
+}
+
+.app-developer, .app-purchase {
+    font-size: 14px;
+    color: gray;
+}
+
+.app-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.install-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.app-preview {
+    margin: 15px 0;
+    position: relative;
+}
+
+.app-preview-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+.platforms {
+    margin-top: 20px;
+}
+.platform-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.platform-button:hover {
+    background-color: #388E3C;
+}
+
+/* Hiệu ứng hover cho nút tải xuống */
+.install-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.install-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+ /* Overlay che toàn màn hình khi mở ảnh */
+/* Overlay che toàn màn hình khi mở ảnh */
+.modal {
+display: none;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.8);
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px; /* Tránh ảnh bị sát mép */
+}
+
+/* Ảnh lớn */
+.modal-content {
+max-width: 50%; /* 90% chiều rộng màn hình */
+max-height: 50%; /* 90% chiều cao màn hình */
+border-radius: 10px;
+object-fit: contain; /* Giữ nguyên tỷ lệ ảnh */
+}

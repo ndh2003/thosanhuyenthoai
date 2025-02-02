@@ -5,159 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="https://images.spiderum.com/sp-images/f9aabbc0449311ec885eab61bad4d8bd.png">
     <title>Thợ Săn Huyền Thoại</title>
+    <link rel="stylesheet" href="./css/css.css"> <!-- Gắn file CSS -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: white;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-
-        }
-        .loader {
-            border: 6px solid #f3f3f3;
-            border-top: 6px solid #4CAF50;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .app-container {
-            width: 800px;
-            padding: 20px;
-            background-color: #181818;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .app-header {
-            display: flex;
-            align-items: center;
-        }
-
-        .app-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 15px;
-            margin-right: 15px;
-        }
-
-        .app-info {
-            text-align: left;
-        }
-
-        .app-title {
-            font-size: 20px;
-            margin: 0;
-        }
-
-        .app-developer, .app-purchase {
-            font-size: 14px;
-            color: gray;
-        }
-
-        .app-details {
-            display: flex;
-            justify-content: space-between;
-            margin: 15px 0;
-            font-size: 14px;
-        }
-
-        .install-button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 12px;
-            width: 100%;
-            font-size: 18px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .app-preview {
-            margin: 15px 0;
-            position: relative;
-        }
-
-        .app-preview-image {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .nav-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .prev { left: 10px; }
-        .next { right: 10px; }
-        .platforms {
-            margin-top: 20px;
-        }
-        .platform-button {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .platform-button:hover {
-            background-color: #388E3C;
-        }
         /* Hiệu ứng hoa rơi */
-        .flower {
-            position: absolute;
-            top: -50px;
-            width: 30px;
-            height: 30px;
-            background-image: url('./Image/12281.png');
-            background-size: cover;
-            opacity: 0.8;
-        }
-        
-        /* Hiệu ứng hover cho nút tải xuống */
-        .install-button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 12px;
-            width: 100%;
-            font-size: 18px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .install-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
-        }
+.flower {
+    position: absolute;
+    top: -50px;
+    width: 30px;
+    height: 30px;
+    background-image: url('./Image/12281.png');
+    background-size: cover;
+    opacity: 0.8;
+}
+
     </style>
 </head>
 <body>
+    <!-- Overlay hiển thị ảnh lớn -->
+<div id="image-modal" class="modal" onclick="closeImage()">
+    <img id="modal-image" class="modal-content">
+</div>
+
     <audio id="bg-music" loop>
         <source src="./Image/vietnam-bamboo-flute-143601.mp3" type="audio/mpeg">
     </audio>
     <div class="app-container">
         <div class="app-header">
-            <img src="./Image/characterIcon2.png" alt="Thợ Săn Huyền Thoại" class="app-icon">
+            <!-- Ảnh thu nhỏ -->
+        <img src="./Image/characterIcon2.png" alt="Thợ Săn Huyền Thoại" class="app-icon" onclick="openImage(this.src)">
+
             <div class="app-info">
                 <h1 class="app-title">Thợ Săn Huyền Thoại</h1>
                 <p class="app-developer">NDH STUDIO VN</p>
@@ -223,57 +99,7 @@
     <footer class="footers">
        
     </footer>
-
-    <script>
-        document.addEventListener("click", function() {
-        document.getElementById("bg-music").play();
-    }, { once: true }); // Chạy một lần duy nhất
-        function createFlower() {
-            const flower = document.createElement("body");
-            flower.classList.add("flower");
-            document.body.appendChild(flower);
-
-            const startX = Math.random() * window.innerWidth;
-            const duration = Math.random() * 5 + 5;
-            const size = Math.random() * 20 + 10;
-            
-            flower.style.left = `${startX}px`;
-            flower.style.width = `${size}px`;
-            flower.style.height = `${size}px`;
-
-            flower.animate([
-                { transform: `translateY(0px)`, opacity: 1 },
-                { transform: `translateY(${window.innerHeight}px)`, opacity: 0 }
-            ], {
-                duration: duration * 1000,
-                easing: "linear"
-            });
-
-            setTimeout(() => { flower.remove(); }, duration * 1000);
-        }
-        setInterval(createFlower, 300);
-        
-        function increaseDownloadCount() {
-            let counter = document.getElementById("download-counter");
-            counter.innerText = parseInt(counter.innerText) + 1;
-        }
-        const images = [
-            "./Image/bgr1.jpg",
-            "./Image/bgr2.jpg",
-            "./Image/bgr3.jpg"
-        ];
-        let currentIndex = 0;
-
-        function nextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            document.getElementById("preview-image").src = images[currentIndex];
-        }
-
-        function prevImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            document.getElementById("preview-image").src = images[currentIndex];
-        }
-        
-    </script>
+    <script src="./script/script.js"></script> <!-- Gắn file JavaScript -->
+   
 </body>
 </html>

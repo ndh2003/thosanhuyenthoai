@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://images.spiderum.com/sp-images/f9aabbc0449311ec885eab61bad4d8bd.png">
     <title>Thợ Săn Huyền Thoại</title>
     <style>
         body {
@@ -121,12 +122,17 @@
         .platform-button:hover {
             background-color: #388E3C;
         }
+        .footers
+        {
+            text-align: center;
+
+        }
     </style>
 </head>
 <body>
     <div class="app-container">
         <div class="app-header">
-            <img src="https://images.spiderum.com/sp-images/f9aabbc0449311ec885eab61bad4d8bd.png" alt="Thợ Săn Huyền Thoại" class="app-icon">
+            <img src="/Image/characterIcon2.png" alt="Thợ Săn Huyền Thoại" class="app-icon">
             <div class="app-info">
                 <h1 class="app-title">Thợ Săn Huyền Thoại</h1>
                 <p class="app-developer">NDH STUDIO VN</p>
@@ -145,7 +151,7 @@
         
         <div class="app-preview">
             <button class="nav-button prev" onclick="prevImage()">❮</button>
-            <img id="preview-image" src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/04/ngoc-rong-online-1024x536.jpg.webp" alt="Gameplay" class="app-preview-image">
+            <img id="preview-image" src="./Image/bgr1.jpg" alt="Gameplay" class="app-preview-image">
             <button class="nav-button next" onclick="nextImage()">❯</button>
         </div>
         
@@ -166,11 +172,18 @@
         <h2>📌 Nền tảng hỗ trợ 📌</h2>
         <div class="platforms">
             <a href="#" class="platform-button">Tải cho PC</a>
-            <a href="#" class="platform-button">Tải cho Android</a>
+            <a href="https://drive.google.com/file/d/1mKPR2rdGiq_vRlAVHcrXI_ilGLUaS-Gp/view?usp=sharing" class="platform-button">Tải cho Android</a>
             <a href="#" class="platform-button">Tải cho Ios ( tạm chưa có )</a>
+            
         </div>
-
+        <img src="/Image/characterIcon2.png" alt="Thợ Săn Huyền Thoại" class="app-icon">
+        <img src="/Image/characterIcon.png" alt="Thợ Săn Huyền Thoại" class="app-icon">
+        <p>🔥 <strong>Sử dụng công nghệ Unity 5 !</strong> 🔥</p>
+        <img src="/Image/Unity_Logo.png" alt="Thợ Săn Huyền Thoại" class="app-icon">
         <p>🔥 <strong>Hãy tải game ngay hôm nay và bắt đầu hành trình của bạn!</strong> 🔥</p>
+        <a href="#"><h2>🔥 Báo lỗi 🔥</h2></a>
+        <a href="#"><h2>🔥 Góp ý🔥</h2></a>
+
         </div>
         
         <button class="action-button">Hành động</button>
@@ -178,13 +191,17 @@
         <button class="action-button">Đơn giản</button>
         <button class="action-button">Hấp dẫn</button>
         
+        
     </div>
+    <footer class="footers">
+       
+    </footer>
 
     <script>
         const images = [
-            "https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/04/ngoc-rong-online-1024x536.jpg.webp",
-            "https://img.thuthuatphanmem.vn/uploads/2018/09/28/hinh-anh-7-vien-ngoc-rong-dep-nhat_023309510.jpg",
-            "https://didongviet.vn/dchannel/wp-content/uploads/2022/11/chu-be-rong-online-didongviet-2.jpg"
+            "./Image/bgr1.jpg",
+            "./Image/bgr2.jpg",
+            "./Image/bgr3.jpg"
         ];
         let currentIndex = 0;
 

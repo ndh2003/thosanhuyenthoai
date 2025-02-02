@@ -122,14 +122,39 @@
         .platform-button:hover {
             background-color: #388E3C;
         }
-        .footers
-        {
-            text-align: center;
-
+        /* Hiệu ứng hoa rơi */
+        .flower {
+            position: absolute;
+            top: -50px;
+            width: 30px;
+            height: 30px;
+            background-image: url('./Image/12281.png');
+            background-size: cover;
+            opacity: 0.8;
+        }
+        
+        /* Hiệu ứng hover cho nút tải xuống */
+        .install-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .install-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
 <body>
+    <audio autoplay loop>
+        <source src="./Image/vietnam-bamboo-flute-143601.mp3" type="audio/mpeg">
+    </audio>
     <div class="app-container">
         <div class="app-header">
             <img src="./Image/characterIcon2.png" alt="Thợ Săn Huyền Thoại" class="app-icon">
@@ -154,8 +179,9 @@
             <img id="preview-image" src="./Image/bgr1.jpg" alt="Gameplay" class="app-preview-image">
             <button class="nav-button next" onclick="nextImage()">❯</button>
         </div>
-        
+       
         <div class="app-description">
+            
         <h1>Thợ Săn Huyền Thoại</h1>
         <p><span class="highlight">Thợ Săn Huyền Thoại</span> là một tựa game nhập vai hành động (RPG) 2D <span class="highlight">offline</span> dành cho <span class="highlight">PC và Android</span>. Bạn sẽ phiêu lưu trong thế giới giả tưởng, chiến đấu với quái vật và thu thập trang bị mạnh mẽ mà không cần kết nối mạng.</p>   
         <h3>Thợ Săn Huyền Thoại - VN</h3>
@@ -168,7 +194,6 @@
             <li>✅ <strong>Thế giới mở rộng lớn</strong> – Khám phá nhiều khu vực, săn boss huyền thoại.</li>
             <li>✅ <strong>Chế độ chơi đa dạng</strong>: Phiêu lưu cốt truyện, Sinh tồn, Thử thách.</li>
         </ul>
-        
 
         <h2>📌 Nền tảng hỗ trợ 📌</h2>
         <div class="platforms">
@@ -200,6 +225,35 @@
     </footer>
 
     <script>
+        function createFlower() {
+            const flower = document.createElement("body");
+            flower.classList.add("flower");
+            document.body.appendChild(flower);
+
+            const startX = Math.random() * window.innerWidth;
+            const duration = Math.random() * 5 + 5;
+            const size = Math.random() * 20 + 10;
+            
+            flower.style.left = `${startX}px`;
+            flower.style.width = `${size}px`;
+            flower.style.height = `${size}px`;
+
+            flower.animate([
+                { transform: `translateY(0px)`, opacity: 1 },
+                { transform: `translateY(${window.innerHeight}px)`, opacity: 0 }
+            ], {
+                duration: duration * 1000,
+                easing: "linear"
+            });
+
+            setTimeout(() => { flower.remove(); }, duration * 1000);
+        }
+        setInterval(createFlower, 300);
+        
+        function increaseDownloadCount() {
+            let counter = document.getElementById("download-counter");
+            counter.innerText = parseInt(counter.innerText) + 1;
+        }
         const images = [
             "./Image/bgr1.jpg",
             "./Image/bgr2.jpg",

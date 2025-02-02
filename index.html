@@ -152,7 +152,7 @@
     </style>
 </head>
 <body>
-    <audio autoplay loop>
+    <audio id="bg-music" loop>
         <source src="./Image/vietnam-bamboo-flute-143601.mp3" type="audio/mpeg">
     </audio>
     <div class="app-container">
@@ -270,7 +270,9 @@
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             document.getElementById("preview-image").src = images[currentIndex];
         }
-         
+        document.addEventListener("click", function() {
+        document.getElementById("bg-music").play();
+    }, { once: true }); // Chạy một lần duy nhất
     </script>
 </body>
 </html>

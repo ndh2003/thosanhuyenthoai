@@ -7,8 +7,8 @@
     <title>Thợ Săn Huyền Thoại</title>
     <link rel="stylesheet" href="./css/css.css"> <!-- Gắn file CSS -->
     <style>
-        /* Hiệu ứng hoa rơi */
-.flower {
+       /* Hiệu ứng hoa rơi */
+       .flower {
     position: absolute;
     top: -50px;
     width: 30px;
@@ -16,6 +16,30 @@
     background-image: url('./Image/12281.png');
     background-size: cover;
     opacity: 0.8;
+    background-color: transparent; /* Đảm bảo nền trong suốt */
+    animation: fall 5s infinite;
+    animation-timing-function: ease-in;
+}
+
+
+@keyframes fall {
+    0% {
+        top: -50px;
+        left: randomPosition();
+        opacity: 0.8;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 100vh;  /* Cuối cùng rơi xuống dưới màn hình */
+        opacity: 0;
+        transform: rotate(360deg);
+    }
+}
+
+/* Hàm tạo vị trí ngẫu nhiên cho mỗi hoa */
+@keyframes randomPosition {
+    0% { left: 0%; }
+    100% { left: 100%; }
 }
 
     </style>

@@ -225,6 +225,9 @@
     </footer>
 
     <script>
+        document.addEventListener("click", function() {
+        document.getElementById("bg-music").play();
+    }, { once: true }); // Chạy một lần duy nhất
         function createFlower() {
             const flower = document.createElement("body");
             flower.classList.add("flower");
@@ -270,9 +273,7 @@
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             document.getElementById("preview-image").src = images[currentIndex];
         }
-        document.addEventListener("click", function() {
-        document.getElementById("bg-music").play();
-    }, { once: true }); // Chạy một lần duy nhất
+        
     </script>
 </body>
 </html>

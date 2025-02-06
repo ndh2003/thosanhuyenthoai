@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./Image/characterIcon2.png">
+    <title>Thợ Săn Huyền Thoại</title>
+    <link rel="stylesheet" href="./css/css.css"> <!-- Gắn file CSS -->
+    <style>
+       /* Hiệu ứng hoa rơi */
+       .flower {
+    position: absolute;
+    top: -50px;
+    width: 30px;
+    height: 30px;
+    background-image: url('./Image/12281.png');
+    background-size: cover;
+    opacity: 0.8;
+    background-color: transparent; /* Đảm bảo nền trong suốt */
+    animation: fall 5s infinite;
+    animation-timing-function: ease-in;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f3ec78, #af4261);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+
+
+@keyframes fall {
+    0% {
+        top: -50px;
+        left: randomPosition();
+        opacity: 0.8;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 100vh;  /* Cuối cùng rơi xuống dưới màn hình */
+        opacity: 0;
+        transform: rotate(360deg);
+    }
+}
+
+/* Hàm tạo vị trí ngẫu nhiên cho mỗi hoa */
+@keyframes randomPosition {
+    0% { left: 0%; }
+    100% { left: 100%; }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Overlay hiển thị ảnh lớn -->
+<div id="image-modal" class="modal" onclick="closeImage()">
+    <img id="modal-image" class="modal-content">
+</div>
+
+    <audio id="bg-music" loop>
+        <source src="./Image/vietnam-bamboo-flute-143601.mp3" type="audio/mpeg">
+    </audio>
+    <div class="app-container">
+        <div class="app-header">
+            <!-- Ảnh thu nhỏ -->
+        <img src="./Image/characterIcon2.png" alt="Thợ Săn Huyền Thoại" class="app-icon" onclick="openImage(this.src)">
+
+            <div class="app-info">
+                <h1 class="app-title">Thợ Săn Huyền Thoại</h1>
+                <p class="app-developer">NDH STUDIO VN</p>
+                <p class="app-purchase">Thông tin trò chơi</p>
+            </div>
+        </div>
+        
+        <div class="app-details">
+            <span class="rating">Đánh giá 5 ⭐</span>
+            <span class="downloads">Thể loại nhập vai</span>
+            <span class="size">50 MB</span>
+            <span class="age">7+ tuổi</span>
+        </div>
+        
+        <button class="install-button" onclick="window.location.href='nentang.html'">Tải Xuống</button>
+        
+        <div class="app-preview">
+            <button class="nav-button prev" onclick="prevImage()">❮</button>
+            <img id="preview-image" src="./Image/bgr1.jpg" alt="Gameplay" class="app-preview-image">
+            <button class="nav-button next" onclick="nextImage()">❯</button>
+        </div>
+       
+        <div class="app-description">
+            
+        <h1>Thợ Săn Huyền Thoại</h1>
+        <p><span class="highlight">Thợ Săn Huyền Thoại</span> là một tựa game nhập vai hành động (RPG) 2D <span class="highlight">offline</span> dành cho <span class="highlight">PC và Android</span>. Bạn sẽ phiêu lưu trong thế giới giả tưởng, chiến đấu với quái vật và thu thập trang bị mạnh mẽ mà không cần kết nối mạng.</p>   
+        <h3>Thợ Săn Huyền Thoại - VN</h3>
+        <h2>🔥 Tính năng nổi bật 🔥</h2>
+        <ul style="text-align: left; font-size: 16px;">
+            <li>✅ <strong>Chơi hoàn toàn offline</strong> – Không cần internet.</li>
+            <li>✅ <strong>Chiến đấu thời gian thực</strong> với hệ thống kỹ năng đa dạng.</li>
+            <li>✅ <strong>Hệ thống nhân vật tùy chỉnh</strong> – Chọn lớp nhân vật, nâng cấp kỹ năng.</li>
+            <li>✅ <strong>Trang bị và vũ khí đa dạng</strong> – cường hóa, khảm ngọc để tối ưu sức mạnh.</li>
+            <li>✅ <strong>Thế giới mở rộng lớn</strong> – Khám phá nhiều khu vực, săn boss huyền thoại.</li>
+            <li>✅ <strong>Chế độ chơi đa dạng</strong>: Phiêu lưu cốt truyện, Sinh tồn, Thử thách.</li>
+        </ul>
+
+        <h2>📌 Nền tảng hỗ trợ 📌</h2>
+        <div class="platforms">
+            <a href="#" class="platform-button">Tải cho PC</a>
+            <a href="https://drive.google.com/file/d/1mKPR2rdGiq_vRlAVHcrXI_ilGLUaS-Gp/view?usp=sharing" class="platform-button">Tải cho Android</a>
+            <a href="#" class="platform-button">Tải cho Ios ( tạm chưa có )</a>
+            
+        </div>
+        <img src="./Image/characterIcon2.png" alt="Thợ Săn Huyền Thoại" class="app-icon">
+        <img src="./Image/characterIcon.png" alt="Thợ Săn Huyền Thoại" class="app-icon">
+        <p>🔥 <strong>Sử dụng công nghệ Unity 5 !</strong> 🔥</p>
+        <img src="./Image/Unity_Logo.png" alt="Thợ Săn Huyền Thoại" class="app-icon">
+        <p>🔥 <strong>Hãy tải game ngay hôm nay và bắt đầu hành trình của bạn!</strong> 🔥</p>
+        <a href="#"><h2>🔥 Báo lỗi 🔥</h2></a>
+        <a href="#"><h2>🔥 Góp ý🔥</h2></a>
+        <a href="gioithieu.html"><h2>🔥 Giới Thiệu 🔥</h2></a>
+
+        </div>
+        
+        <button class="action-button">Hành động</button>
+        <button class="action-button">Nhập vai</button>
+        <button class="action-button">Đơn giản</button>
+        <button class="action-button">Hấp dẫn</button>
+        <p>©Copyright © 2025 NDH STDUIO VN. Mọi quyền được bảo lưu. Tất cả các nhãn hiệu được tham chiếu ở đây là tài sản của chủ sở hữu tương ứng.</p>
+        
+        
+    </div>
+    <footer class="footers">
+       
+    </footer>
+    <script src="./script/script.js"></script> <!-- Gắn file JavaScript -->
+   
+</body>
+</html>

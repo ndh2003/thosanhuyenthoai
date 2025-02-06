@@ -1,129 +1,152 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="https://images.spiderum.com/sp-images/f9aabbc0449311ec885eab61bad4d8bd.png">
-    <title>Thợ Săn Huyền Thoại</title>
-    <link rel="stylesheet" href="./css/css.css"> <!-- Gắn file CSS -->
-    <style>
-       /* Hiệu ứng hoa rơi */
-       .flower {
-    position: absolute;
-    top: -50px;
-    width: 30px;
-    height: 30px;
-    background-image: url('./Image/12281.png');
-    background-size: cover;
-    opacity: 0.8;
-    background-color: transparent; /* Đảm bảo nền trong suốt */
-    animation: fall 5s infinite;
-    animation-timing-function: ease-in;
-}
-
-
-@keyframes fall {
-    0% {
-        top: -50px;
-        left: randomPosition();
-        opacity: 0.8;
-        transform: rotate(0deg);
-    }
-    100% {
-        top: 100vh;  /* Cuối cùng rơi xuống dưới màn hình */
-        opacity: 0;
-        transform: rotate(360deg);
-    }
-}
-
-/* Hàm tạo vị trí ngẫu nhiên cho mỗi hoa */
-@keyframes randomPosition {
-    0% { left: 0%; }
-    100% { left: 100%; }
-}
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAME STUDIO VN</title>
+  <link rel="icon" type="image/x-icon" href="./Image/Logo.JPG">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/css.css"> <!-- Gắn file CSS -->
+  <style>
+    
+   
+  </style>
 </head>
 <body>
-    <!-- Overlay hiển thị ảnh lớn -->
-<div id="image-modal" class="modal" onclick="closeImage()">
-    <img id="modal-image" class="modal-content">
+
+  <header>
+    <div class="logo">GAME STUDIO VN</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="navMenu">
+      <a href="#about" onclick="closeMenu()">Giới Thiệu</a>
+      <a href="#services" onclick="closeMenu()">Dịch Vụ</a>
+      <a href="#gallery" onclick="closeMenu()">Hình Ảnh</a>
+      <a href="#contact" onclick="closeMenu()">Liên Hệ</a>
+    </nav>
+  </header>
+<!-- Nội dung trang -->
+<div class="container" id="home">
+  <h1>Chào mừng đến với Trang GAME STUDIO VN</h1>
 </div>
 
-    <audio id="bg-music" loop>
-        <source src="./Image/vietnam-bamboo-flute-143601.mp3" type="audio/mpeg">
-    </audio>
-    <div class="app-container">
-        <div class="app-header">
-            <!-- Ảnh thu nhỏ -->
-        <img src="./Image/characterIcon2.png" alt="Thợ Săn Huyền Thoại" class="app-icon" onclick="openImage(this.src)">
+<div class="section" id="about">
+  <h2>Giới Thiệu</h2>
+  <p>Chào mừng bạn đến với <strong>Unity Game Studio</strong>, nơi biến ý tưởng thành những trò chơi tuyệt vời. Chúng tôi chuyên phát triển các game độc đáo và sáng tạo trên nền tảng Unity, từ game 2D, 3D đến các game online MMO kết nối hàng triệu người chơi trên toàn thế giới.</p>
+  <p>Với đội ngũ lập trình viên và nhà thiết kế đầy kinh nghiệm, chúng tôi không ngừng đổi mới để mang lại trải nghiệm tốt nhất cho người chơi. Dịch vụ của chúng tôi bao gồm thiết kế, phát triển, tối ưu hóa và hỗ trợ kỹ thuật cho các dự án game đa nền tảng.</p>
+  <p>Mục tiêu của chúng tôi là giúp bạn hiện thực hóa ý tưởng game một cách chuyên nghiệp và thành công.</p>
+</div>
 
-            <div class="app-info">
-                <h1 class="app-title">Thợ Săn Huyền Thoại</h1>
-                <p class="app-developer">NDH STUDIO VN</p>
-                <p class="app-purchase">Thông tin trò chơi</p>
-            </div>
-        </div>
-        
-        <div class="app-details">
-            <span class="rating">Đánh giá 5 ⭐</span>
-            <span class="downloads">Thể loại nhập vai</span>
-            <span class="size">50 MB</span>
-            <span class="age">7+ tuổi</span>
-        </div>
-        
-        <button class="install-button" onclick="window.location.href='nentang.html'">Tải Xuống</button>
-        
-        <div class="app-preview">
-            <button class="nav-button prev" onclick="prevImage()">❮</button>
-            <img id="preview-image" src="./Image/bgr1.jpg" alt="Gameplay" class="app-preview-image">
-            <button class="nav-button next" onclick="nextImage()">❯</button>
-        </div>
-       
-        <div class="app-description">
-            
-        <h1>Thợ Săn Huyền Thoại</h1>
-        <p><span class="highlight">Thợ Săn Huyền Thoại</span> là một tựa game nhập vai hành động (RPG) 2D <span class="highlight">offline</span> dành cho <span class="highlight">PC và Android</span>. Bạn sẽ phiêu lưu trong thế giới giả tưởng, chiến đấu với quái vật và thu thập trang bị mạnh mẽ mà không cần kết nối mạng.</p>   
-        <h3>Thợ Săn Huyền Thoại - VN</h3>
-        <h2>🔥 Tính năng nổi bật 🔥</h2>
-        <ul style="text-align: left; font-size: 16px;">
-            <li>✅ <strong>Chơi hoàn toàn offline</strong> – Không cần internet.</li>
-            <li>✅ <strong>Chiến đấu thời gian thực</strong> với hệ thống kỹ năng đa dạng.</li>
-            <li>✅ <strong>Hệ thống nhân vật tùy chỉnh</strong> – Chọn lớp nhân vật, nâng cấp kỹ năng.</li>
-            <li>✅ <strong>Trang bị và vũ khí đa dạng</strong> – cường hóa, khảm ngọc để tối ưu sức mạnh.</li>
-            <li>✅ <strong>Thế giới mở rộng lớn</strong> – Khám phá nhiều khu vực, săn boss huyền thoại.</li>
-            <li>✅ <strong>Chế độ chơi đa dạng</strong>: Phiêu lưu cốt truyện, Sinh tồn, Thử thách.</li>
-        </ul>
 
-        <h2>📌 Nền tảng hỗ trợ 📌</h2>
-        <div class="platforms">
-            <a href="#" class="platform-button">Tải cho PC</a>
-            <a href="https://drive.google.com/file/d/1mKPR2rdGiq_vRlAVHcrXI_ilGLUaS-Gp/view?usp=sharing" class="platform-button">Tải cho Android</a>
-            <a href="#" class="platform-button">Tải cho Ios ( tạm chưa có )</a>
-            
-        </div>
-        <img src="./Image/characterIcon2.png" alt="Thợ Săn Huyền Thoại" class="app-icon">
-        <img src="./Image/characterIcon.png" alt="Thợ Săn Huyền Thoại" class="app-icon">
-        <p>🔥 <strong>Sử dụng công nghệ Unity 5 !</strong> 🔥</p>
-        <img src="./Image/Unity_Logo.png" alt="Thợ Săn Huyền Thoại" class="app-icon">
-        <p>🔥 <strong>Hãy tải game ngay hôm nay và bắt đầu hành trình của bạn!</strong> 🔥</p>
-        <a href="#"><h2>🔥 Báo lỗi 🔥</h2></a>
-        <a href="#"><h2>🔥 Góp ý🔥</h2></a>
-
-        </div>
-        
-        <button class="action-button">Hành động</button>
-        <button class="action-button">Nhập vai</button>
-        <button class="action-button">Đơn giản</button>
-        <button class="action-button">Hấp dẫn</button>
-        <p>©Copyright © 2025 NDH STDUIO VN. Mọi quyền được bảo lưu. Tất cả các nhãn hiệu được tham chiếu ở đây là tài sản của chủ sở hữu tương ứng.</p>
-        
-        
+<div class="section" id="services">
+  <h2>Dịch Vụ Phát Triển Game Unity</h2>
+  <p>Chúng tôi cung cấp các dịch vụ phát triển game chất lượng cao, tập trung vào việc xây dựng trải nghiệm game tuyệt vời với Unity - nền tảng hàng đầu trong ngành công nghiệp game.</p>
+  <div class="card-grid">
+    <div class="card">
+      <img src="./Image/game1.jpg" alt="Game 2D">
+      <div class="card-content">
+        <h2>Phát Triển Game 2D</h2>
+        <p>Tạo ra các trò chơi 2D nhẹ nhàng, đầy màu sắc với gameplay độc đáo và đồ họa đẹp mắt.</p>
+      </div>
     </div>
-    <footer class="footers">
-       
-    </footer>
-    <script src="./script/script.js"></script> <!-- Gắn file JavaScript -->
-   
+    <div class="card">
+      <img src="./Image/game2.jpg" alt="Game 3D">
+      <div class="card-content">
+        <h2>Phát Triển Game 3D</h2>
+        <p>Thiết kế và phát triển các trò chơi 3D với hình ảnh chân thực và trải nghiệm tuyệt vời.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="./Image/game3.jpg" alt="Game Online MMO">
+      <div class="card-content">
+        <h2>Game Online & MMO</h2>
+        <p>Phát triển các game trực tuyến nhiều người chơi, kết nối cộng đồng game thủ trên toàn thế giới.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="./Image/game4.jpg" alt="Dịch vụ tối ưu hóa">
+      <div class="card-content">
+        <h2>Tối Ưu Hóa Game</h2>
+        <p>Cải thiện hiệu suất và tối ưu hóa trò chơi để chạy mượt mà trên nhiều nền tảng.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="section" id="blog">
+  <h2>Bài Viết</h2>
+  <div class="card-grid">
+    <div class="card">
+      <img src="./Image/bgr1.jpg" alt="Bài viết 1">
+      <div class="card-content">
+        <h2>Trò chơi Thợ Săn Huyền Thoại</h2>
+        <p>Tóm tắt ngắn gọn về bài viết 1.</p>
+        <a href="thosanhuyenthoai.html" class="button">Xem ngay</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="./Image/bgr2.jpg" alt="Bài viết 2">
+      <div class="card-content">
+        <h2>Tiêu đề bài viết 2</h2>
+        <p>Tóm tắt ngắn gọn về bài viết 2.</p>
+        <a href="#" class="button">Xem Ngay</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="./Image/bgr3.jpg" alt="Bài viết 3">
+      <div class="card-content">
+        <h2>Tiêu đề bài viết 3</h2>
+        <p>Tóm tắt ngắn gọn về bài viết 3.</p>
+        <a href="#" class="button">Xem Ngay</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="contact">
+  <h2>Liên Hệ</h2>
+  <p>Thông tin liên hệ của chúng tôi.</p>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2025 Trang Web Đẹp Full. All rights reserved.</p>
+  <p>Theo dõi chúng tôi trên:
+    <a href="#">Facebook</a> |
+    <a href="#">Instagram</a> |
+    <a href="#">Twitter</a>
+  </p>
+</footer>
+
+<script>
+  // Hiệu ứng thay đổi nền menu khi cuộn trang
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+  function toggleMenu() {
+    const nav = document.querySelector('#navMenu');
+    nav.classList.toggle('active');
+  }
+  
+  function closeMenu() {
+    const nav = document.querySelector('#navMenu');
+    nav.classList.remove('active');
+  }
+
+  // Đóng menu khi click ngoài menu
+  document.addEventListener('click', function(event) {
+    const nav = document.querySelector('#navMenu');
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+      nav.classList.remove('active');
+    }
+  });
+</script>
+
 </body>
 </html>

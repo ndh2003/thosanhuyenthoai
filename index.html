@@ -42,28 +42,28 @@
   <p>Chúng tôi cung cấp các dịch vụ phát triển game chất lượng cao, tập trung vào việc xây dựng trải nghiệm game tuyệt vời với Unity - nền tảng hàng đầu trong ngành công nghiệp game.</p>
   <div class="card-grid">
     <div class="card">
-      <img src="./Image/game1.jpg" alt="Game 2D">
+      <img src="./Image/a1.png" alt="Game 2D">
       <div class="card-content">
         <h2>Phát Triển Game 2D</h2>
         <p>Tạo ra các trò chơi 2D nhẹ nhàng, đầy màu sắc với gameplay độc đáo và đồ họa đẹp mắt.</p>
       </div>
     </div>
     <div class="card">
-      <img src="./Image/game2.jpg" alt="Game 3D">
+      <img src="./Image/a2.png" alt="Game 3D">
       <div class="card-content">
         <h2>Phát Triển Game 3D</h2>
         <p>Thiết kế và phát triển các trò chơi 3D với hình ảnh chân thực và trải nghiệm tuyệt vời.</p>
       </div>
     </div>
     <div class="card">
-      <img src="./Image/game3.jpg" alt="Game Online MMO">
+      <img src="./Image/a3.jpg" alt="Game Online MMO">
       <div class="card-content">
         <h2>Game Online & MMO</h2>
         <p>Phát triển các game trực tuyến nhiều người chơi, kết nối cộng đồng game thủ trên toàn thế giới.</p>
       </div>
     </div>
     <div class="card">
-      <img src="./Image/game4.jpg" alt="Dịch vụ tối ưu hóa">
+      <img src="./Image/a4.jpg" alt="Dịch vụ tối ưu hóa">
       <div class="card-content">
         <h2>Tối Ưu Hóa Game</h2>
         <p>Cải thiện hiệu suất và tối ưu hóa trò chơi để chạy mượt mà trên nhiều nền tảng.</p>
@@ -106,6 +106,7 @@
 <div class="section" id="contact">
   <h2>Liên Hệ</h2>
   <p>Thông tin liên hệ của chúng tôi.</p>
+  <p>Zalo:0906003264</p>
 </div>
 
 <!-- Footer -->
@@ -146,6 +147,14 @@
       nav.classList.remove('active');
     }
   });
+
+  window.onload = function() {
+    const path = window.location.pathname;
+    if (path.endsWith('.html')) {
+      const cleanPath = path.replace('.html', '');
+      window.history.replaceState(null, null, cleanPath);
+    }
+  };
 </script>
 
 </body>

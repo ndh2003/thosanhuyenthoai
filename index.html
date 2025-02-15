@@ -22,6 +22,7 @@
       <a href="#services" onclick="closeMenu()">Dịch Vụ</a>
       <a href="#gallery" onclick="closeMenu()">Hình Ảnh</a>
       <a href="#contact" onclick="closeMenu()">Liên Hệ</a>
+      <a href="dieukhoandichvu.html" onclick="closeMenu()">Điều khoản và Dịch vụ</a>
     </nav>
   </header>
 <!-- Nội dung trang -->
@@ -148,13 +149,13 @@
     }
   });
 
-  window.onload = function() {
-    const path = window.location.pathname;
-    if (path.endsWith('.html')) {
-      const cleanPath = path.replace('.html', '');
-      window.history.replaceState(null, null, cleanPath);
-    }
-  };
+ // window.onload = function() {
+    //const path = window.location.pathname;
+    //if (path.endsWith('.html')) {
+     // const cleanPath = path.replace('.html', '');
+     // window.history.replaceState(null, null, cleanPath);
+    //}
+  //};
 </script>
 
 </body>
